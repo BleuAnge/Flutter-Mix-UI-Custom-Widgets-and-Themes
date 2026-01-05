@@ -8,7 +8,8 @@ enum CheckboxVariant {
     switch (this) {
       case .primary:
         return CheckboxStyler()
-          .checkColor(CustomColorToken.primary.token());
+          .activeColor(CustomColorToken.secondary.token())
+          .checkColor(CustomColorToken.onSecondary.token());
     }
   }
 }

@@ -126,6 +126,7 @@ class _MyAppState extends State<MyApp> {
                 .spacing(8),
               children: [
                 CustomCheckbox(
+                  variant: .primary,
                   value: true, 
                   onChanged: (value) {}
                 ),
