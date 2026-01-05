@@ -3,8 +3,10 @@ import 'package:mix/mix.dart';
 import 'package:test_new_flutter_version/ui/config/tokens.dart';
 import 'package:test_new_flutter_version/ui/themes/primary.dart';
 import 'package:test_new_flutter_version/ui/widgets/appbar/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/bottom_navigation_bar/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/button/styler.dart';
 import 'package:test_new_flutter_version/ui/widgets/button/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/checkbox/widget.dart';
 
 void main() {
   runApp(
@@ -21,29 +23,40 @@ void main() {
   );
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int currentIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: CustomColorToken.background.token().resolveProp(context),
       appBar: CustomAppbar(
         variant: .primary,
         title: "My Flutter App"
       ),
-      body: Container(
-        color: .from(
-          alpha: 1, 
-          red: 566, 
-          green: 566, 
-          blue: 566
-        ),
-        width: MediaQuery.sizeOf(context).width,
-        height: MediaQuery.sizeOf(context).height,
-        child: Column(
-          mainAxisAlignment: .center,
-          crossAxisAlignment: .center,
-          spacing: 16,
+      body: SingleChildScrollView(
+        scrollDirection: .vertical,
+        child: ColumnBox(
+          style: FlexBoxStyler()
+            .color(Colors.transparent)
+            .width(MediaQuery.sizeOf(context).width)
+            .mainAxisAlignment(.center)
+            .crossAxisAlignment(.center)
+            .spacing(16),
           children: [
             StyledText(
               'Hello, Flutter!',
@@ -105,10 +118,43 @@ class MyApp extends StatelessWidget {
               label: "Home", 
               icon: Icons.home, 
               onPressed: () {}
+            ),
+            RowBox(
+              style: FlexBoxStyler()
+                .mainAxisAlignment(.center)
+                .spacing(8),
+              children: [
+                CustomCheckbox(
+                  value: true, 
+                  onChanged: (value) {}
+                ),
+                StyledText(
+                  'Checkbox',
+                )
+              ],
             )
           ],
         ),
-      )
+      ),
+      bottomNavigationBar: CustomBottomNavigationBar(
+        variant: .primary,
+        currentIndex: currentIndex,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
+        ],
+      ),
     );
   }
 }
