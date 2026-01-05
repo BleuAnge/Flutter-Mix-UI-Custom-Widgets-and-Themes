@@ -50,67 +50,67 @@ class CheckboxStyler extends Style<CheckboxSpec>
 //? Convinience Methods
   CheckboxStyler tristate(bool value) {
     return merge(
-      CheckboxStyler.create(tristate: Prop.value(value))
+      CheckboxStyler(tristate: value)
     );
   }
 
   CheckboxStyler mouseCursor(MouseCursor value) {
     return merge(
-      CheckboxStyler.create(mouseCursor: Prop.value(value))
+      CheckboxStyler(mouseCursor: value)
     );
   }
 
   CheckboxStyler activeColor(Color value) {
     return merge(
-      CheckboxStyler.create(activeColor: Prop.value(value))
+      CheckboxStyler(activeColor: value)
     );
   }
 
   CheckboxStyler checkColor(Color value) {
     return merge(
-      CheckboxStyler.create(checkColor: Prop.value(value))
+      CheckboxStyler(checkColor: value)
     );
   }
 
   CheckboxStyler focusColor(Color value) {
     return merge(
-      CheckboxStyler.create(focusColor: Prop.value(value))
+      CheckboxStyler(focusColor: value)
     );
   }
 
   CheckboxStyler hoverColor(Color value) {
     return merge(
-      CheckboxStyler.create(hoverColor: Prop.value(value))
+      CheckboxStyler(hoverColor: value)
     );
   }
 
   CheckboxStyler splashRadius(double value) {
     return merge(
-      CheckboxStyler.create(splashRadius: Prop.value(value))
+      CheckboxStyler(splashRadius: value)
     );
   }
 
   CheckboxStyler materialTapTargetSize(MaterialTapTargetSize value) {
     return merge(
-      CheckboxStyler.create(materialTapTargetSize: Prop.value(value))
+      CheckboxStyler(materialTapTargetSize: value)
     );
   }
 
   CheckboxStyler autofocus(bool value) {
     return merge(
-      CheckboxStyler.create(autofocus: Prop.value(value))
+      CheckboxStyler(autofocus: value)
     );
   }
 
   CheckboxStyler isError(bool value) {
     return merge(
-      CheckboxStyler.create(isError: Prop.value(value))
+      CheckboxStyler(isError: value)
     );
   }
 
   CheckboxStyler semanticLabel(String value) {
     return merge(
-      CheckboxStyler.create(semanticLabel: Prop.value(value))
+      CheckboxStyler(semanticLabel: value)
     );
   }
 

@@ -7,6 +7,7 @@ import 'package:test_new_flutter_version/ui/widgets/bottom_navigation_bar/widget
 import 'package:test_new_flutter_version/ui/widgets/button/styler.dart';
 import 'package:test_new_flutter_version/ui/widgets/button/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/checkbox/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/circular_progress_indicator/widget.dart';
 
 void main() {
   runApp(
@@ -132,6 +133,9 @@ class _MyAppState extends State<MyApp> {
                   'Checkbox',
                 )
               ],
+            ),
+            CustomCircularProgressIndicator(
+              variant: .primary
             )
           ],
         ),
