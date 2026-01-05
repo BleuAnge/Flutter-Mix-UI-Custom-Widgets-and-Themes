@@ -2,6 +2,7 @@ import 'package:flutter/material.dart' hide OutlinedButton;
 import 'package:mix/mix.dart';
 import 'package:test_new_flutter_version/ui/config/tokens.dart';
 import 'package:test_new_flutter_version/ui/themes/primary.dart';
+import 'package:test_new_flutter_version/ui/widgets/appbar/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/button/styler.dart';
 import 'package:test_new_flutter_version/ui/widgets/button/widget.dart';
 
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('My Flutter App'),
+      appBar: CustomAppbar(
+        variant: .primary,
+        title: "My Flutter App"
       ),
       body: Container(
         color: .from(
@@ -43,12 +45,11 @@ class MyApp extends StatelessWidget {
           crossAxisAlignment: .center,
           spacing: 16,
           children: [
-            Text(
+            StyledText(
               'Hello, Flutter!',
-              style: .new(
-                fontSize: 24, 
-                fontWeight: .bold
-              ),
+              style: TextStyler()
+                .fontSize(24)
+                .fontWeight(.w500),
             ),
             CustomButton(
               label: "Test Button", 

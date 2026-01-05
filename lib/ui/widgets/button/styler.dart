@@ -93,9 +93,10 @@ class ButtonStyler extends Style<ButtonSpec>
     super.animation,
     super.modifier,
     super.variants
-  }) :  $container = container,
-        $icon = icon,
-        $label = label;
+  }) :  
+    $container = container,
+    $icon = icon,
+    $label = label;
 
   @override
     ButtonStyler merge(
