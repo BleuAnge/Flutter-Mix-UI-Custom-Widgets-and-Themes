@@ -10,6 +10,9 @@ import 'package:test_new_flutter_version/ui/widgets/checkbox/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/circular_progress_indicator/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/drawer/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/dropdown/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/floating_action_button/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/gridview/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/linear_progress_indicator/widget.dart';
 
 void main() {
   runApp(
@@ -183,9 +186,35 @@ class _MyAppState extends State<MyApp> {
                   child: StyledText("Option 3"), 
                 ),
               ]
+            ),
+            CustomGridView(
+              variant: .primary,
+              children: [
+                StyledText("Item 1"),
+                StyledText("Item 2"),
+                StyledText("Item 3"),
+                StyledText("Item 4"),
+                StyledText("Item 5"),
+                StyledText("Item 6"),
+                StyledText("Item 7"),
+                StyledText("Item 8"),
+                StyledText("Item 9"),
+                StyledText("Item 10"),
+                StyledText("Item 11"),
+                StyledText("Item 12"),
+              ]
+            ),
+            CustomLinearProgressIndicator(
+              variant: .primary
             )
           ],
         ),
+      ),
+      floatingActionButton: CustomFloatingActionButton(
+        variant: .primary,
+        tooltip: 'Increment Counter',
+        onPressed: () {},
+        child: const Icon(Icons.add),
       ),
       bottomNavigationBar: CustomBottomNavigationBar(
         variant: .primary,
