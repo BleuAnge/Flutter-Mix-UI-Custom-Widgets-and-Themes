@@ -33,17 +33,17 @@ class CircularProgressIndicatorStyler extends Style<CircularProgressIndicatorSpe
     super.modifier,
     super.variants
   }) :
-    $value = value == null ? null : Prop.value(value),
-    $backgroundColor = backgroundColor == null ? null : Prop.value(backgroundColor),
-    $color = color == null ? null : Prop.value(color),
-    $strokeWidth = strokeWidth == null ? null : Prop.value(strokeWidth),
-    $strokeAlign = strokeAlign == null ? null : Prop.value(strokeAlign),
-    $semanticsLabel = semanticsLabel == null ? null : Prop.value(semanticsLabel),
-    $semanticsValue = semanticsValue == null ? null : Prop.value(semanticsValue),
-    $strokeCap = strokeCap == null ? null : Prop.value(strokeCap),
-    $constraints = constraints == null ? null : Prop.value(constraints),
-    $trackGap = trackGap == null ? null : Prop.value(trackGap),
-    $padding = padding == null ? null : Prop.value(padding);
+    $value = Prop.maybe(value),
+    $backgroundColor = Prop.maybe(backgroundColor),
+    $color = Prop.maybe(color),
+    $strokeWidth = Prop.maybe(strokeWidth),
+    $strokeAlign = Prop.maybe(strokeAlign),
+    $semanticsLabel = Prop.maybe(semanticsLabel),
+    $semanticsValue = Prop.maybe(semanticsValue),
+    $strokeCap = Prop.maybe(strokeCap),
+    $constraints = Prop.maybe(constraints),
+    $trackGap = Prop.maybe(trackGap),
+    $padding = Prop.maybe(padding);
 
 //? Component Methods
 

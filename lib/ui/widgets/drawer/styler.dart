@@ -28,78 +28,78 @@ class DrawerStyler extends Style<DrawerSpec>
     super.variants,
     super.modifier
   }) : 
-    $backgroundColor = backgroundColor == null ? null : Prop.value(backgroundColor),
-    $elevation = elevation == null ? null : Prop.value(elevation),
-    $shadowColor = shadowColor == null ? null : Prop.value(shadowColor),
-    $surfaceTintColor = surfaceTintColor == null ? null : Prop.value(surfaceTintColor),
-    $shape = shape == null ? null : Prop.value(shape),
-    $width = width == null ? null : Prop.value(width),
-    $semanticLabel = semanticLabel == null ? null : Prop.value(semanticLabel),
-    $clipBehavior = clipBehavior == null ? null : Prop.value(clipBehavior);
+    $backgroundColor = Prop.maybe(backgroundColor),
+    $elevation = Prop.maybe(elevation),
+    $shadowColor =  Prop.maybe(shadowColor),
+    $surfaceTintColor =  Prop.maybe(surfaceTintColor),
+    $shape = Prop.maybe(shape),
+    $width = Prop.maybe(width),
+    $semanticLabel = Prop.maybe(semanticLabel),
+    $clipBehavior = Prop.maybe(clipBehavior);
 
 //? Component Methods
 
 //? Convinience Methods
   DrawerStyler backgroundColor(Color value) {
     return merge(
-      DrawerStyler.create(
-        backgroundColor: Prop.value(value)
+      DrawerStyler(
+        backgroundColor: value
       )
     );
   }
 
   DrawerStyler elevation(double value) {
     return merge(
-      DrawerStyler.create(
-        elevation: Prop.value(value)
+      DrawerStyler(
+        elevation: value
       )
     );
   }
 
   DrawerStyler shadowColor(Color value) {
     return merge(
-      DrawerStyler.create(
-        shadowColor: Prop.value(value)
+      DrawerStyler(
+        shadowColor: value
       )
     );
   }
 
   DrawerStyler surfaceTintColor(Color value) {
     return merge(
-      DrawerStyler.create(
-        surfaceTintColor: Prop.value(value)
+      DrawerStyler(
+        surfaceTintColor: value
       )
     );
   }
 
   DrawerStyler shape(ShapeBorder value) {
     return merge(
-      DrawerStyler.create(
-        shape: Prop.value(value)
+      DrawerStyler(
+        shape: value
       )
     );
   }
 
   DrawerStyler width(double value) {
     return merge(
-      DrawerStyler.create(
-        width: Prop.value(value)
+      DrawerStyler(
+        width: value
       )
     );
   }
 
   DrawerStyler semanticLabel(String value) {
     return merge(
-      DrawerStyler.create(
-        semanticLabel: Prop.value(value)
+      DrawerStyler(
+        semanticLabel: value
       )
     );
   }
 
   DrawerStyler clipBehavior(Clip value) {
     return merge(
-      DrawerStyler.create(
-        clipBehavior: Prop.value(value)
+      DrawerStyler(
+        clipBehavior: value
       )
     );
   }

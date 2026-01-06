@@ -8,6 +8,8 @@ import 'package:test_new_flutter_version/ui/widgets/button/styler.dart';
 import 'package:test_new_flutter_version/ui/widgets/button/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/checkbox/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/circular_progress_indicator/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/drawer/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/dropdown/widget.dart';
 
 void main() {
   runApp(
@@ -33,10 +35,17 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
+  String dropdownValue = "Option 1";
 
   void _onItemTapped(int index) {
     setState(() {
       currentIndex = index;
+    });
+  }
+
+  void _onDropdownChanged(String? value) {
+    setState(() {
+      dropdownValue = value ?? "Option 1";
     });
   }
 
@@ -48,6 +57,24 @@ class _MyAppState extends State<MyApp> {
       appBar: CustomAppbar(
         variant: .primary,
         title: "My Flutter App"
+      ),
+      drawer: CustomDrawer(
+        child: ColumnBox(
+          style: FlexBoxStyler()
+            .color(CustomColorToken.background.token())
+            .mainAxisAlignment(.center)
+            .crossAxisAlignment(.center)
+            .width(MediaQuery.sizeOf(context).width)
+            .height(MediaQuery.sizeOf(context).height),
+          children: [
+            StyledText(
+              'Drawer Context',
+              style: TextStyler()
+                .fontSize(24)
+                .fontWeight(.w500),
+            )
+          ]
+        )
       ),
       body: SingleChildScrollView(
         scrollDirection: .vertical,
@@ -137,6 +164,25 @@ class _MyAppState extends State<MyApp> {
             ),
             CustomCircularProgressIndicator(
               variant: .primary
+            ),
+            CustomDropdown<String>(
+              variant: .primary,
+              value: dropdownValue, 
+              onChanged: _onDropdownChanged,
+              items: [
+                DropdownMenuItem(
+                  value: "Option 1",
+                  child: StyledText("Option 1"),
+                ),
+                DropdownMenuItem(
+                  value: "Option 2",
+                  child: StyledText("Option 2"),
+                ),
+                DropdownMenuItem(
+                  value: "Option 3",
+                  child: StyledText("Option 3"), 
+                ),
+              ]
             )
           ],
         ),

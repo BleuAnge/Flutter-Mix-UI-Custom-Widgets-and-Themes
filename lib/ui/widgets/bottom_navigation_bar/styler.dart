@@ -49,141 +49,179 @@ class BottomNavigationBarStyler extends Style<BottomNavigationBarSpec>
     super.variants,
     super.modifier,
   }) :
-    $elevation = elevation == null ? null : Prop.value(elevation),
-    $bottomNavigationBarType = bottomNavigationBarType == null ? null : Prop.value(bottomNavigationBarType),
-    $fixedColor = fixedColor == null ? null : Prop.value(fixedColor),
-    $backgroundColor = backgroundColor == null ? null : Prop.value(backgroundColor),
-    $iconSize = iconSize == null ? null : Prop.value(iconSize),
-    $selectedItemColor = selectedItemColor == null ? null : Prop.value(selectedItemColor),
-    $unselectedItemColor = unselectedItemColor == null ? null : Prop.value(unselectedItemColor),
-    $selectedIconTheme = selectedIconTheme == null ? null : Prop.value(selectedIconTheme),
-    $unselectedIconTheme = unselectedIconTheme == null ? null : Prop.value(unselectedIconTheme),
-    $selectedFontSize = selectedFontSize == null ? null : Prop.value(selectedFontSize),
-    $unselectedFontSize = unselectedFontSize == null ? null : Prop.value(unselectedFontSize),
-    $selectedLabelStyle = selectedLabelStyle == null ? null : Prop.value(selectedLabelStyle),
-    $unselectedLabelStyle = unselectedLabelStyle == null ? null : Prop.value(unselectedLabelStyle),
-    $showSelectedLabels = showSelectedLabels == null ? null : Prop.value(showSelectedLabels),
-    $showUnselectedLabels = showUnselectedLabels == null ? null : Prop.value(showUnselectedLabels),
-    $mouseCursor = mouseCursor == null ? null : Prop.value(mouseCursor),
-    $enableFeedback = enableFeedback == null ? null : Prop.value(enableFeedback),
-    $landscapeLayout = landscapeLayout == null ? null : Prop.value(landscapeLayout),
-    $useLegacyColorScheme = useLegacyColorScheme == null ? null : Prop.value(useLegacyColorScheme);
+    $elevation = Prop.maybe(elevation),
+    $bottomNavigationBarType = Prop.maybe(bottomNavigationBarType),
+    $fixedColor = Prop.maybe(fixedColor),
+    $backgroundColor = Prop.maybe(backgroundColor),
+    $iconSize = Prop.maybe(iconSize),
+    $selectedItemColor = Prop.maybe(selectedItemColor),
+    $unselectedItemColor = Prop.maybe(unselectedItemColor),
+    $selectedIconTheme = Prop.maybe(selectedIconTheme),
+    $unselectedIconTheme = Prop.maybe(unselectedIconTheme),
+    $selectedFontSize = Prop.maybe(selectedFontSize),
+    $unselectedFontSize = Prop.maybe(unselectedFontSize),
+    $selectedLabelStyle = Prop.maybe(selectedLabelStyle),
+    $unselectedLabelStyle = Prop.maybe(unselectedLabelStyle),
+    $showSelectedLabels = Prop.maybe(showSelectedLabels),
+    $showUnselectedLabels = Prop.maybe(showUnselectedLabels),
+    $mouseCursor = Prop.maybe(mouseCursor),
+    $enableFeedback = Prop.maybe(enableFeedback),
+    $landscapeLayout = Prop.maybe(landscapeLayout),
+    $useLegacyColorScheme =Prop.maybe(useLegacyColorScheme);
 
 //? Component Methods
 
 //? Convinience Methods
   BottomNavigationBarStyler elevation(double value) {
-    return BottomNavigationBarStyler.create(
-      elevation: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        elevation: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler bottomNavigationBarType(BottomNavigationBarType value) {
-    return BottomNavigationBarStyler.create(
-      bottomNavigationBarType: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        bottomNavigationBarType: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler fixedColor(Color value) {
-    return BottomNavigationBarStyler.create(
-      fixedColor: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        fixedColor: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler backgroundColor(Color value) {
-    return BottomNavigationBarStyler.create(
-      backgroundColor: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        backgroundColor: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler iconSize(double value) {
-    return BottomNavigationBarStyler.create(
-      iconSize: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        iconSize: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler selectedItemColor(Color value) {
-    return BottomNavigationBarStyler.create(
-      selectedItemColor: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        selectedItemColor: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler unselectedItemColor(Color value) {
-    return BottomNavigationBarStyler.create(
-      unselectedItemColor: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        unselectedItemColor: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler selectedIconTheme(IconThemeData value) {
-    return BottomNavigationBarStyler.create(
-      selectedIconTheme: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        selectedIconTheme: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler unselectedIconTheme(IconThemeData value) {
-    return BottomNavigationBarStyler.create(
-      unselectedIconTheme: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        unselectedIconTheme: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler selectedFontSize(double value) {
-    return BottomNavigationBarStyler.create(
-      selectedFontSize: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        selectedFontSize: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler unselectedFontSize(double value) {
-    return BottomNavigationBarStyler.create(
-      unselectedFontSize: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        unselectedFontSize: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler selectedLabelStyle(TextStyle value) {
-    return BottomNavigationBarStyler.create(
-      selectedLabelStyle: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        selectedLabelStyle: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler unselectedLabelStyle(TextStyle value) {
-    return BottomNavigationBarStyler.create(
-      unselectedLabelStyle: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        unselectedLabelStyle: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler showSelectedLabels(bool value) {
-    return BottomNavigationBarStyler.create(
-      showSelectedLabels: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        showSelectedLabels: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler showUnselectedLabels(bool value) {
-    return BottomNavigationBarStyler.create(
-      showUnselectedLabels: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        showUnselectedLabels: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler mouseCursor(MouseCursor value) {
-    return BottomNavigationBarStyler.create(
-      mouseCursor: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        mouseCursor: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler enableFeedback(bool value) {
-    return BottomNavigationBarStyler.create(
-      enableFeedback: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        enableFeedback: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler landscapeLayout(BottomNavigationBarLandscapeLayout value) {
-    return BottomNavigationBarStyler.create(
-      landscapeLayout: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        landscapeLayout: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler useLegacyColorScheme(bool value) {
-    return BottomNavigationBarStyler.create(
-      useLegacyColorScheme: Prop.value(value),
-    ).merge(this);
+    return merge(
+      BottomNavigationBarStyler(
+        useLegacyColorScheme: value,
+      )
+    );
   }
 
   BottomNavigationBarStyler.create({

@@ -33,17 +33,17 @@ class CheckboxStyler extends Style<CheckboxSpec>
     super.variants,
     super.modifier
   }) : 
-    $tristate = tristate == null ? null : Prop.value(tristate),
-    $mouseCursor = mouseCursor == null ? null : Prop.value(mouseCursor),
-    $activeColor = activeColor == null ? null : Prop.value(activeColor),
-    $checkColor = checkColor == null ? null : Prop.value(checkColor),
-    $focusColor = focusColor == null ? null : Prop.value(focusColor),
-    $hoverColor = hoverColor == null ? null : Prop.value(hoverColor),
-    $splashRadius = splashRadius == null ? null : Prop.value(splashRadius),
-    $materialTapTargetSize = materialTapTargetSize == null ? null : Prop.value(materialTapTargetSize),
-    $autofocus = autofocus == null ? null : Prop.value(autofocus),
-    $isError = isError == null ? null : Prop.value(isError),
-    $semanticLabel = semanticLabel == null ? null : Prop.value(semanticLabel);
+    $tristate = Prop.maybe(tristate),
+    $mouseCursor = Prop.maybe(mouseCursor),
+    $activeColor = Prop.maybe(activeColor),
+    $checkColor =  Prop.maybe(checkColor),
+    $focusColor = Prop.maybe(focusColor),
+    $hoverColor = Prop.maybe(hoverColor),
+    $splashRadius = Prop.maybe(splashRadius),
+    $materialTapTargetSize = Prop.maybe(materialTapTargetSize),
+    $autofocus = Prop.maybe(autofocus),
+    $isError = Prop.maybe(isError),
+    $semanticLabel = Prop.maybe(semanticLabel);
 
 //? Component Methods
 
