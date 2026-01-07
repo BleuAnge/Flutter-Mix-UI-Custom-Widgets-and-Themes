@@ -269,7 +269,7 @@ class AppbarStyler extends Style<AppbarSpec>
     );
   }
 
-  AppbarStyler.create({
+  const AppbarStyler.create({
     Prop<bool>? automaticallyImplyLeading,
     Prop<double>? elevation,
     Prop<double>? scrolledUnderElevation,

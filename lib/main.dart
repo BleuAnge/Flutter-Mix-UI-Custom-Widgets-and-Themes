@@ -16,6 +16,7 @@ import 'package:test_new_flutter_version/ui/widgets/gridview/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/image_box/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/linear_progress_indicator/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/listview/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/radio_group/widget.dart';
 
 void main() {
   runApp(
@@ -42,6 +43,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
   String dropdownValue = "Option 1";
+  String radioValue = "Option 1";
   final List<Widget> widgetList = [
     StyledText("Item 1"),
     StyledText("Item 2"),
@@ -66,6 +68,12 @@ class _MyAppState extends State<MyApp> {
   void _onDropdownChanged(String? value) {
     setState(() {
       dropdownValue = value ?? "Option 1";
+    });
+  }
+
+  void _onRadioChanged(String? value) {
+    setState(() {
+      radioValue = value ?? "Option 1";
     });
   }
 
@@ -239,6 +247,21 @@ class _MyAppState extends State<MyApp> {
                 );
               },
               path: "https://djm-aaa1.kxcdn.com/resources/upload/products/710yFUdThsL._AC_UL1500_.jpg"
+            ),
+            CustomRadioGroup<String>(
+              groupValue: radioValue,
+              onChanged: _onRadioChanged,
+              children: [
+                {
+                  "Option 1" : StyledText("Option 1"),
+                },
+                {
+                  "Option 2" : StyledText("Option 2"),
+                },
+                {
+                  "Option 3" : StyledText("Option 3"),
+                },
+              ], 
             )
           ],
         ),

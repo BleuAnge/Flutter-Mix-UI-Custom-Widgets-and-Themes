@@ -224,7 +224,7 @@ class BottomNavigationBarStyler extends Style<BottomNavigationBarSpec>
     );
   }
 
-  BottomNavigationBarStyler.create({
+  const BottomNavigationBarStyler.create({
     Prop<double>? elevation,
     Prop<BottomNavigationBarType>? bottomNavigationBarType,
     Prop<Color>? fixedColor,
