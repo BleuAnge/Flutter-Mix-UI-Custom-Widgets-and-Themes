@@ -12,6 +12,10 @@ dependencies:
 
   cupertino_icons: ^1.0.8
 
+  shimmer: ^3.0.0
+  flutter_svg:
+  cached_network_image:
+  flutter_cache_manager: ^3.4.1
   mix: ^2.0.0-rc.0
 
 dev_dependencies:

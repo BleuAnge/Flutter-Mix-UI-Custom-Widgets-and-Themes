@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide OutlinedButton;
 import 'package:mix/mix.dart';
+import 'package:shimmer/shimmer.dart';
 import 'package:test_new_flutter_version/ui/config/tokens.dart';
 import 'package:test_new_flutter_version/ui/themes/primary.dart';
 import 'package:test_new_flutter_version/ui/widgets/appbar/widget.dart';
@@ -12,7 +13,9 @@ import 'package:test_new_flutter_version/ui/widgets/drawer/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/dropdown/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/floating_action_button/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/gridview/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/image_box/widget.dart';
 import 'package:test_new_flutter_version/ui/widgets/linear_progress_indicator/widget.dart';
+import 'package:test_new_flutter_version/ui/widgets/listview/widget.dart';
 
 void main() {
   runApp(
@@ -39,6 +42,20 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int currentIndex = 0;
   String dropdownValue = "Option 1";
+  final List<Widget> widgetList = [
+    StyledText("Item 1"),
+    StyledText("Item 2"),
+    StyledText("Item 3"),
+    StyledText("Item 4"),
+    StyledText("Item 5"),
+    StyledText("Item 6"),
+    StyledText("Item 7"),
+    StyledText("Item 8"),
+    StyledText("Item 9"),
+    StyledText("Item 10"),
+    StyledText("Item 11"),
+    StyledText("Item 12"),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -189,23 +206,39 @@ class _MyAppState extends State<MyApp> {
             ),
             CustomGridView(
               variant: .primary,
-              children: [
-                StyledText("Item 1"),
-                StyledText("Item 2"),
-                StyledText("Item 3"),
-                StyledText("Item 4"),
-                StyledText("Item 5"),
-                StyledText("Item 6"),
-                StyledText("Item 7"),
-                StyledText("Item 8"),
-                StyledText("Item 9"),
-                StyledText("Item 10"),
-                StyledText("Item 11"),
-                StyledText("Item 12"),
-              ]
+              children: widgetList
             ),
             CustomLinearProgressIndicator(
               variant: .primary
+            ),
+            CustomListView(
+              variant: .primary,
+              children: widgetList
+            ),
+            CustomImageBox(
+              variant: .primary,
+              imageBuilder: (context, image) {
+                return Image(image: image);
+              },
+              errorWidget: (context, url, error) {
+                return StyledIcon(
+                  icon: Icons.image_outlined,
+                );
+              },
+              progressIndicatorBuilder: (context, url, progress) {
+                return Shimmer.fromColors(
+                  baseColor: CustomColorToken.background.token.resolve(context), 
+                  highlightColor: CustomColorToken.primary.token.resolve(context),
+                  child: Box(
+                    style: BoxStyler()
+                      .width(150)
+                      .height(150)
+                      .borderRadius(.circular(8))
+                      .color(CustomColorToken.background.token()),
+                  ), 
+                );
+              },
+              path: "https://djm-aaa1.kxcdn.com/resources/upload/products/710yFUdThsL._AC_UL1500_.jpg"
             )
           ],
         ),
